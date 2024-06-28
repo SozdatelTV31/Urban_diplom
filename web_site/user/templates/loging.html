@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %} Авторизация {% endblock %}
+{% block content %}
+<form action="{% url 'login' %}" method="post">
+  {% csrf_token %}
+  <fieldset>
+    {% if messages or form.non_field_errors %}
+    <div class="alert alert-dismissible alert-success">
+        {% if messages %}
+              {% for message in messages %}
+                   {{ message }}
+              {% endfor %}
+    </div>
+        <div class="alert alert-dismissible alert-danger">
+        {% else %}
+              {{ form.non_field_errors }
+        {% endif %}
+</div>
+    {% endif%}
+    <legend>Авторизация</legend>
+    <div>
+      <label for="{{ form.username.id_for_label }}" class="form-label mt-4">Имя пользователя</label>
+      {{ form.username }}
+    </div>
+    <div>
+      <label for="{{ form.password.id_for_label }}" class="form-label mt-4">Пароль</label>
+      {{ form.password }}
+    </div>
+      <p></p>
+    <button type="submit" class="btn btn-success">Авторизация</button>
+      <p></p>
+    <p><a href="{% url 'register' %}">Нет аккаунта? Регистрация</a></p>
+</form>
+{% endblock %}

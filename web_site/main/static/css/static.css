@@ -1,0 +1,52 @@
+body{
+background-image: url(nero.png);
+background-repeat: no-repeat;
+background-size: cover;
+}
+h1 {
+color: #fff;
+}
+main .text {
+    float: left;
+    color: #fff;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+form {
+   margin-left: 32%;
+   width: 500px;
+   margin-top: 50px;
+}
+main .text {
+    float: left;
+    color: #fff;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+.mb-3 {
+     float: left;
+     color: black;
+     clear: both;
+     width: 420px;
+     margin: 50px 34%;
+     text-align: left;
+}
+.btn-secondary {
+     float: left;
+     color: black;
+     clear: both;
+     width: 420px;
+     margin: 30px 32%;
+     text-align: left;
+}
+a {
+color: #fff;
+}
+label {
+color: #fff;
+}
+legend {
+color: #fff;
+}

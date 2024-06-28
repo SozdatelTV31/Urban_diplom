@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+<link rel="stylesheet" href="media/css/main.css">
+{% block title %} Регистрация {% endblock %}
+{% block content %}
+<form action="{% url 'register' %}" method="post">
+  {% csrf_token %}
+  <fieldset>
+     {% if form.errors %}
+    <div class="alert alert-dismissible alert-danger">
+   {{ form.errors }}
+</div>
+    {% endif%}
+    <legend>Регистрация</legend>
+    <div>
+      <label for="{{ form.first_name.id_for_label }}" class="form-label mt-4">Ваше Имя</label>
+      {{ form.first_name }}
+    </div>
+    <div>
+      <label for="{{ form.last_name.id_for_label }}" class="form-label mt-4">Ваша Фамилия</label>
+      {{ form.last_name }}
+    </div>
+    <div>
+      <label for="{{ form.username.id_for_label }}" class="form-label mt-4">Имя пользователя</label>
+      {{ form.username }}
+    </div>
+    <div>
+      <label for="{{ form.femail.id_for_label }}" class="form-label mt-4">Электронный адресс</label>
+      {{ form.email }}
+      <small id="emailHelp" class="form-text text-muted">Персональные данные – любая информация, относящаяся к прямо или косвенно определённому, или определяемому физическому лицу (субъекту персональных данных).</small>
+    </div>
+    <div>
+      <label for="{{ form.password1.id_for_label }}" class="form-label mt-4">Пароль</label>
+      {{ form.password1 }}
+    </div>
+    <div>
+      <label for="{{ form.password2.id_for_label }}" class="form-label mt-4">Подтверждение пароля</label>
+      {{ form.password2 }}
+    </div>
+      <p></p>
+    <button type="submit" class="btn btn-success">Регистрация</button>
+      <p></p>
+    <p><a href="{% url 'login' %}">Есть аккаунт? Авторизация</a></p>
+</form>
+{% endblock %}

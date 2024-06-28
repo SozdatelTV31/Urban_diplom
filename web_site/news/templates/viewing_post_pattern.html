@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} Новости {% endblock %}
+{% block content %}
+ <div class="card border-success mb-3" style="max-width: 200rem;">
+  <div class="card-header"><h2>{{post_next.title}}.</h2></div>
+  <div class="card-body">
+    <h4 class="card-title">{{post_next.date}}</h4>
+    <p class="card-text" >{{post_next.full_text}}</p>
+      <a href="{% url 'news' %}"><button class="btn btn-danger"> Назад </button></a>
+  </div>
+{% endblock %}

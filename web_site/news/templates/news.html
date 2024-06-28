@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Новости {% endblock %}
+{% block content %}
+<div class="text">
+    <h1>Новости на сайте</h1>
+    {% for element in db_news %}
+    <div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">{{ element.title}}</div>
+  <div class="card-body">
+    <h4 class="card-title">{{ element.anons }}</h4>
+      <a href="{% url 'news-post' element.id%}" class="btn btn-light"> Читать далее --> </a>
+  </div>
+</div>
+    {% endfor %}
+</div>
+
+{% endblock %}
