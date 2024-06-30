@@ -6,7 +6,7 @@
 │  db.sqlite3  
 │  manage.py  
 │  
-├───detection_site  
+├─── web_site  
 │  │  asgi.py  
 │  │  settings.py  
 │  │  urls.py  
